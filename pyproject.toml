@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reelscope"
+version = "0.1.0"
+description = "Eyes for coding agents on video: fetch references, find cuts, flashes, motion, grade, on-screen text, beat sync, and export cue maps for Remotion."
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "numpy>=1.26",
+  "opencv-python-headless>=4.9",
+  "pillow>=10",
+  "librosa>=0.10",
+  "soundfile>=0.12",
+  "pyloudnorm>=0.1",
+  "scipy>=1.11",
+  "yt-dlp>=2026.3.17",
+  "ocrmac>=1.0; sys_platform == 'darwin'",
+]
+
+[project.scripts]
+reelscope = "reelscope.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["reelscope*"]

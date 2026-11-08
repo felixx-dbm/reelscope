@@ -19,6 +19,9 @@ dependencies = [
   "ocrmac>=1.0; sys_platform == 'darwin'",
 ]
 
+[dependency-groups]
+dev = ["pytest>=8"]
+
 [project.scripts]
 reelscope = "reelscope.cli:main"
 

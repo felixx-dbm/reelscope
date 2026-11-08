@@ -105,12 +105,12 @@ def sync(cut_times: list[float], audio: dict, fps: float) -> dict:
 
 
 def earshot_timeline(wav: Path) -> str | None:
-    """Optional semantic sound tagging via earshot, if installed (EARSHOT_DIR or ~/Developer/Tools/earshot)."""
-    root = Path(os.environ.get("EARSHOT_DIR", "~/Developer/Tools/earshot")).expanduser()
+    """Optional semantic sound tagging via earshot, if installed (on PATH or via EARSHOT_DIR)."""
+    root = os.environ.get("EARSHOT_DIR")
     if shutil.which("earshot"):
         cmd = ["earshot", "timeline", str(wav)]
-    elif (root / "pyproject.toml").exists() and shutil.which("uv"):
-        cmd = ["uv", "run", "-q", "--project", str(root), "earshot", "timeline", str(wav)]
+    elif root and (Path(root).expanduser() / "pyproject.toml").exists() and shutil.which("uv"):
+        cmd = ["uv", "run", "-q", "--project", str(Path(root).expanduser()), "earshot", "timeline", str(wav)]
     else:
         return None
     try:

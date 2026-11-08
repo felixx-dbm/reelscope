@@ -5,7 +5,7 @@ description: Analyze and design video edits without watching or hearing them. Us
 
 # reelscope
 
-`reelscope` is a CLI on PATH (source: ~/Developer/Tools/reelscope). It turns a video into things you can read: a report, contact sheets of freeze frames after every cut, a rhythm timeline image, frame-by-frame strips, and a Remotion cue map. It never plays audio or video. Keep it that way: never use afplay, say, ffplay, `open` on media, a browser preview or Remotion Studio to "check" a result. The user may be in a place where sound must not play.
+`reelscope` is a CLI on PATH. It turns a video into things you can read: a report, contact sheets of freeze frames after every cut, a rhythm timeline image, frame-by-frame strips, and a Remotion cue map. It never plays audio or video. Keep it that way: never use afplay, say, ffplay, `open` on media, a browser preview or Remotion Studio to "check" a result. The user may be in a place where sound must not play.
 
 ## Commands
 
